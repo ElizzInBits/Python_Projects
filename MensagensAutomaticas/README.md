@@ -1,12 +1,12 @@
 # 📱 WhatsApp Automation Bot
 
 ## 📖 Descrição
-Este projeto é um bot que automatiza o envio de mensagens para colaboradores da empresa via WhatsApp Desktop. O bot lê uma planilha com números de telefone e respectivas mensagens, procura o número na lista de contatos do WhatsApp e envia a mensagem.
+Este projeto é um bot que automatiza o envio de mensagens para colaboradores da empresa via WhatsApp Desktop. O bot utiliza uma interface gráfica para inserir os números de telefone e as mensagens, e então envia as mensagens via WhatsApp Desktop.
 
 ## ⚙️ Funcionalidades
 - 🚀 Envio automatizado de mensagens via WhatsApp Desktop.
-- 📊 Leitura de planilha com números de telefone e mensagens dos colaboradores.
-- 🖥️ Abertura automática do WhatsApp Desktop.
+- 📊 Interface gráfica para inserir números de telefone e mensagens.
+- 🖥️ Abertura automática do WhatsApp Desktop e envio das mensagens.
 
 ## 👍 Pontos Positivos
 - 🤖 Automatiza a tarefa repetitiva de envio de mensagens para vários contatos.
@@ -15,10 +15,10 @@ Este projeto é um bot que automatiza o envio de mensagens para colaboradores da
 
 ## ❌ Contras
 - 💻 O programa é feito para usar em uma máquina específica devido aos parâmetros de x e y da tela.
-- 📋 A planilha precisa ser formatada corretamente, com os números de telefone na primeira coluna e as mensagens na segunda.
-- 📏 As coordenadas da tela podem variar em diferentes resoluções e tamanhos de tela, o que pode causar falhas na execução em outras máquinas.
+- 🖥️ As coordenadas da tela podem variar em diferentes resoluções e tamanhos de tela, o que pode causar falhas na execução em outras máquinas.
 - ❓ Não há verificação se a mensagem foi realmente entregue.
+- 📋 A lista de números e mensagens deve ser inserida manualmente na interface gráfica.
 
 ## 📋 Requisitos
 - 🐍 Python 3.x
-- 📦 Bibliotecas: `pyautogui`, `pandas`, `openpyxl`
+- 📦 Bibliotecas: `pyautogui`, `tkinter`, `pynput`
