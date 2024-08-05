@@ -2,16 +2,22 @@ import tkinter as tk
 from tkinter import messagebox
 import pyautogui as pag
 import time
-from pynput.keyboard import Controller
+from pynput.keyboard import Controller, Key
 
 # Inicializar o controlador de teclado
 keyboard = Controller()
 
 def digitar_com_pynput(texto):
     for char in texto:
-        keyboard.press(char)
-        keyboard.release(char)
-        time.sleep(0.05)  # Ajuste o intervalo conforme necessário
+        if char == '\n':
+            keyboard.press(Key.ctrl)
+            keyboard.press(Key.enter)
+            keyboard.release(Key.enter)
+            keyboard.release(Key.ctrl)
+        else:
+            keyboard.press(char)
+            keyboard.release(char)
+        time.sleep(0.05)
 
 def iniciar_whatsapp():
     pag.press('win')
@@ -47,9 +53,9 @@ def enviar_mensagem(numero, mensagem):
 
 def enviar():
     nomes = nome_entry.get("1.0", "end-1c").strip().split('\n')
-    mensagem = mensagem_entry.get("1.0", "end-1c").strip()
+    mensagem = mensagem_entry.get("1.0", "end-1c")
 
-    if not nomes or not mensagem:
+    if not nomes or not mensagem.strip():
         messagebox.showerror("Erro", "Por favor, preencha todos os campos.")
         return
 
